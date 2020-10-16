@@ -10,6 +10,8 @@ import UIKit
 
 class MainMenuViewController: UITableViewController {
     
+    var rowSelected: Int?
+    
     let cellHash = "1729"
     let menuItems = ["Accounts Receivable", "Inventory Management",
                      "Customer Management", "Employee Management",
@@ -41,9 +43,12 @@ class MainMenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowSelected = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
+        if rowSelected == 0 {
+            performSegue(withIdentifier: "goToAccounts", sender: self)
+        }
         
-        performSegue(withIdentifier: "goToAccounts", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -10,6 +10,7 @@ import UIKit
 
 class AccountsReceivableTableViewController: UITableViewController {
     
+    var rowSelected: Int?
     let cellHash = "1729"
     var selectedMenuItem = ["", ""]
 
@@ -34,8 +35,12 @@ class AccountsReceivableTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowSelected = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "goToBills", sender: self)
+        if rowSelected == 0 {
+            performSegue(withIdentifier: "goToBills", sender: self)
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)

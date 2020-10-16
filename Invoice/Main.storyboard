@@ -259,6 +259,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="JEX-XL-OXj" id="OdS-v4-PoL"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="rdV-Dz-zFM">
@@ -279,7 +282,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="nkg-SZ-a7j">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Ta7-09-QYO"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Ta7-09-QYO">
+                            <connections>
+                                <action selector="addNewDebty:" destination="JEX-XL-OXj" id="rQL-Bo-SH5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oos-aS-sKr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

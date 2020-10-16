@@ -8,13 +8,16 @@
 
 import UIKit
 
-class BillsTableViewController: UITableViewController {
+class BillsTableViewController: UITableViewController, UISearchBarDelegate {
     
     var rowSelected : Int?
 
     let cellHash = "1729"
     var selectedMenuItem = ["Aubrey Ridley", "Phillippa Weaver", "Joely Ashley",
                             "Gregor Griffiths", "Bertie Mccann", "Erik Carlson"]
+    
+    var selectedMenuItemCopy = ["Aubrey Ridley", "Phillippa Weaver", "Joely Ashley",
+                                "Gregor Griffiths", "Bertie Mccann", "Erik Carlson"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +64,42 @@ class BillsTableViewController: UITableViewController {
         
         return cell
     }
-
+    
+    
+    @IBAction func addNewDebty(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add new debty", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Entry", style: .default) { (action) in
+            self.selectedMenuItem.append(textField.text!)
+            self.tableView.reloadData()
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "new debty"
+            textField = alertTextField
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        print(searchBar.text!)
+        
+        if selectedMenuItem.contains(where: {$0 == searchBar.text!}) {
+           selectedMenuItem = [searchBar.text!]
+        }
+        self.tableView.reloadData()
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            selectedMenuItem = selectedMenuItemCopy
+            self.tableView.reloadData()
+        }
+    }
+    
 }
 
 
