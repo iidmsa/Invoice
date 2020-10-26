@@ -84,13 +84,14 @@ class BillsTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        print(searchBar.text!)
+        
+        print(searchBar.text!)
         
         if selectedMenuItem.contains(where: {$0 == searchBar.text!}) {
-           selectedMenuItem = [searchBar.text!]
+            selectedMenuItem = [searchBar.text!]
         }
         self.tableView.reloadData()
-        
+ 
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

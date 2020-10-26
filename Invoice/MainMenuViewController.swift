@@ -8,14 +8,18 @@
 
 import UIKit
 
-class MainMenuViewController: UITableViewController {
+class MainMenuViewController: UITableViewController, UISearchBarDelegate {
     
     var rowSelected: Int?
     
     let cellHash = "1729"
-    let menuItems = ["Accounts Receivable", "Inventory Management",
+    var menuItems = ["Accounts Receivable", "Inventory Management",
                      "Customer Management", "Employee Management",
                      "Parts Counter Menu", "Work Order Menu"]
+    
+    var menuItemsCopy = ["Accounts Receivable", "Inventory Management",
+                         "Customer Management", "Employee Management",
+                         "Parts Counter Menu", "Work Order Menu"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +61,24 @@ class MainMenuViewController: UITableViewController {
         
         destinationTableViewController.selectedMenuItem[0] = "Bills"
         destinationTableViewController.selectedMenuItem[1] = "Account Receivable"
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text!)
+            if menuItems.contains(where: {$0 == searchBar.text!}) {
+               menuItems = [searchBar.text!]
+            }
+        
+            self.tableView.reloadData()
+            
+    }
+        
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchBar.text!)
+        if searchBar.text?.count == 0 {
+            menuItems = menuItemsCopy
+            self.tableView.reloadData()
+        }
     }
    
 

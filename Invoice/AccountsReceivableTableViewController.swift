@@ -8,11 +8,12 @@
 
 import UIKit
 
-class AccountsReceivableTableViewController: UITableViewController {
+class AccountsReceivableTableViewController: UITableViewController, UISearchBarDelegate {
     
     var rowSelected: Int?
     let cellHash = "1729"
     var selectedMenuItem = ["", ""]
+    var selectedMenuItemCopy = ["", ""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class AccountsReceivableTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellHash)
+        selectedMenuItemCopy = selectedMenuItem
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
@@ -52,5 +54,23 @@ class AccountsReceivableTableViewController: UITableViewController {
         cell.textLabel?.text = menuItem
         
         return cell
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+//        print(searchBar.text!)
+        
+        if selectedMenuItem.contains(where: {$0 == searchBar.text!}) {
+            selectedMenuItem = [searchBar.text!]
+        }
+        self.tableView.reloadData()
+
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            selectedMenuItem = selectedMenuItemCopy
+            self.tableView.reloadData()
+        }
     }
 }
