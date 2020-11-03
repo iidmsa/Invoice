@@ -12,6 +12,7 @@
 		1706F8472521C9AC00211C2D /* 74735347-belegvektorikone-in-einer-flachen-art-rechnungsikone-gesamtrechnungsikone-mit-dollarsymbol-auf-blaue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1706F8462521C9AC00211C2D /* 74735347-belegvektorikone-in-einer-flachen-art-rechnungsikone-gesamtrechnungsikone-mit-dollarsymbol-auf-blaue.jpg */; };
 		170C9BD125478AF200ED04D6 /* AccountReceivableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C9BD025478AF200ED04D6 /* AccountReceivableTableViewController.swift */; };
 		170C9BD525478FB100ED04D6 /* DebterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170C9BD425478FB100ED04D6 /* DebterViewController.swift */; };
+		1712DBC925511E1F002706B8 /* PartsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1712DBC825511E1F002706B8 /* PartsInfoViewController.swift */; };
 		172EACB3252302A100B15C99 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 172EACB2252302A100B15C99 /* GoogleService-Info.plist */; };
 		1743CB3B2525A01900B7EC5E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743CB3A2525A01900B7EC5E /* MainMenuViewController.swift */; };
 		17593C642534AD74008EAD01 /* AccountsReceivableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17593C632534AD74008EAD01 /* AccountsReceivableTableViewController.swift */; };
@@ -26,6 +27,8 @@
 		17D6C4142521B042009E49F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D6C4122521B042009E49F1 /* LaunchScreen.storyboard */; };
 		17D6C41F2521B042009E49F1 /* InvoiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D6C41E2521B042009E49F1 /* InvoiceTests.swift */; };
 		17D6C42A2521B042009E49F1 /* InvoiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D6C4292521B042009E49F1 /* InvoiceUITests.swift */; };
+		17F7E2E82551094E00C922A9 /* InventoryManagementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E2E72551094E00C922A9 /* InventoryManagementTableViewController.swift */; };
+		17F7E2EA25510C6E00C922A9 /* PartMaintenanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7E2E925510C6E00C922A9 /* PartMaintenanceTableViewController.swift */; };
 		1DBA447245BB7D783C0D444D /* Pods_InvoiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B600084AB960230EE971AE6 /* Pods_InvoiceTests.framework */; };
 		33AE8214FAB5DDF56DA57901 /* Pods_Invoice_InvoiceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 346AD3B2E6698823200B52DC /* Pods_Invoice_InvoiceUITests.framework */; };
 		E4DF8247A396EF5E5E8F30F8 /* Pods_Invoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A2D7CB6899783F6FC247564 /* Pods_Invoice.framework */; };
@@ -56,6 +59,7 @@
 		1706F8462521C9AC00211C2D /* 74735347-belegvektorikone-in-einer-flachen-art-rechnungsikone-gesamtrechnungsikone-mit-dollarsymbol-auf-blaue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "74735347-belegvektorikone-in-einer-flachen-art-rechnungsikone-gesamtrechnungsikone-mit-dollarsymbol-auf-blaue.jpg"; sourceTree = "<group>"; };
 		170C9BD025478AF200ED04D6 /* AccountReceivableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountReceivableTableViewController.swift; sourceTree = "<group>"; };
 		170C9BD425478FB100ED04D6 /* DebterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebterViewController.swift; sourceTree = "<group>"; };
+		1712DBC825511E1F002706B8 /* PartsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartsInfoViewController.swift; sourceTree = "<group>"; };
 		172EACB2252302A100B15C99 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1743CB3A2525A01900B7EC5E /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		17593C632534AD74008EAD01 /* AccountsReceivableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReceivableTableViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		17D6C4252521B042009E49F1 /* InvoiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17D6C4292521B042009E49F1 /* InvoiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceUITests.swift; sourceTree = "<group>"; };
 		17D6C42B2521B042009E49F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17F7E2E72551094E00C922A9 /* InventoryManagementTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryManagementTableViewController.swift; sourceTree = "<group>"; };
+		17F7E2E925510C6E00C922A9 /* PartMaintenanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartMaintenanceTableViewController.swift; sourceTree = "<group>"; };
 		346AD3B2E6698823200B52DC /* Pods_Invoice_InvoiceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invoice_InvoiceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A2D7CB6899783F6FC247564 /* Pods_Invoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AC5799D4911D0EDE1AAB2C4 /* Pods-Invoice-InvoiceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invoice-InvoiceUITests.debug.xcconfig"; path = "Target Support Files/Pods-Invoice-InvoiceUITests/Pods-Invoice-InvoiceUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,12 +151,15 @@
 				17D6C4092521B03D009E49F1 /* SceneDelegate.swift */,
 				17D6C40B2521B03D009E49F1 /* ViewController.swift */,
 				1706F8442521C52B00211C2D /* Main.storyboard */,
+				1712DBC825511E1F002706B8 /* PartsInfoViewController.swift */,
 				176B9AA1253521EA005A5F93 /* DebtyViewController.swift */,
 				170C9BD425478FB100ED04D6 /* DebterViewController.swift */,
 				170C9BD025478AF200ED04D6 /* AccountReceivableTableViewController.swift */,
 				1743CB3A2525A01900B7EC5E /* MainMenuViewController.swift */,
 				176B9A9F25351C84005A5F93 /* BillsTableViewController.swift */,
 				17593C632534AD74008EAD01 /* AccountsReceivableTableViewController.swift */,
+				17F7E2E72551094E00C922A9 /* InventoryManagementTableViewController.swift */,
+				17F7E2E925510C6E00C922A9 /* PartMaintenanceTableViewController.swift */,
 				1794CD2725230FA4004D35DB /* SignInViewController.swift */,
 				17D6C4102521B042009E49F1 /* Assets.xcassets */,
 				17D6C4122521B042009E49F1 /* LaunchScreen.storyboard */,
@@ -444,10 +453,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1743CB3B2525A01900B7EC5E /* MainMenuViewController.swift in Sources */,
+				1712DBC925511E1F002706B8 /* PartsInfoViewController.swift in Sources */,
 				17D6C40C2521B03D009E49F1 /* ViewController.swift in Sources */,
 				17593C642534AD74008EAD01 /* AccountsReceivableTableViewController.swift in Sources */,
 				17D6C4082521B03D009E49F1 /* AppDelegate.swift in Sources */,
 				1794CD2625230860004D35DB /* SignUpViewController.swift in Sources */,
+				17F7E2EA25510C6E00C922A9 /* PartMaintenanceTableViewController.swift in Sources */,
+				17F7E2E82551094E00C922A9 /* InventoryManagementTableViewController.swift in Sources */,
 				170C9BD125478AF200ED04D6 /* AccountReceivableTableViewController.swift in Sources */,
 				1794CD2825230FA4004D35DB /* SignInViewController.swift in Sources */,
 				176B9AA025351C84005A5F93 /* BillsTableViewController.swift in Sources */,

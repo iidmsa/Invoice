@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainMenuViewController: UITableViewController, UISearchBarDelegate {
+class MainMenuViewController: UITableViewController, UISearchBarDelegate  {
     
     var rowSelected: Int?
     
@@ -39,28 +39,39 @@ class MainMenuViewController: UITableViewController, UISearchBarDelegate {
         
         -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
-        
+//        cell.delegate = self
         let menuItem = self.menuItems[indexPath.row]
         cell.textLabel?.text = menuItem
         
         return cell
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         rowSelected = indexPath.row
         tableView.deselectRow(at: indexPath, animated: true)
         if rowSelected == 0 {
             performSegue(withIdentifier: "goToAccounts", sender: self)
+        } else if rowSelected == 1 {
+            performSegue(withIdentifier: "goToInv", sender: self)
         }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationTableViewController = segue.destination
-                    as! AccountsReceivableTableViewController
-        
-        destinationTableViewController.selectedMenuItem[0] = "Bills"
-        destinationTableViewController.selectedMenuItem[1] = "Account Receivable"
+        if rowSelected == 0 {
+            let destinationTableViewController = segue.destination
+                        as! AccountsReceivableTableViewController
+            
+            destinationTableViewController.selectedMenuItem[0] = "Bills"
+            destinationTableViewController.selectedMenuItem[1] = "Account Receivable"
+        } else if rowSelected == 1 {
+            let destinationTableViewController = segue.destination
+                        as! InventoryManagementTableViewController
+            
+            destinationTableViewController.selectedMenuItem[0] = "Part Maintenance"
+            destinationTableViewController.selectedMenuItem[1] = "Class Management"
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

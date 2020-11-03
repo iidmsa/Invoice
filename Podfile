@@ -14,12 +14,12 @@ target 'Invoice' do
     pod 'SVProgressHUD'
     pod 'Firebase/Analytics'
 
+    pod 'SwipeCellKit'
+
   target 'InvoiceTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
-	
 
   target 'InvoiceUITests' do
     # Pods for testing

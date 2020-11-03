@@ -58,11 +58,28 @@ class BillsTableViewController: UITableViewController, UISearchBarDelegate {
         
         -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
-        
+            
         let menuItem = selectedMenuItem[indexPath.row]
         cell.textLabel?.text = menuItem
-        
+
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+            
+           // print("delete")
+            self.selectedMenuItem.remove(at: indexPath.row)
+            self.selectedMenuItemCopy = self.selectedMenuItem
+            self.tableView.reloadData()
+            completionHandler(true)
+        }
+        
+        deleteAction.image = UIImage(named: "delete-icon")
+        deleteAction.backgroundColor = .red
+        
+        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeAction;
     }
     
     
@@ -85,7 +102,7 @@ class BillsTableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        print(searchBar.text!)
+        // print(searchBar.text!)
         
         if selectedMenuItem.contains(where: {$0 == searchBar.text!}) {
             selectedMenuItem = [searchBar.text!]

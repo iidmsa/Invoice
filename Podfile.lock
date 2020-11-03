@@ -82,6 +82,7 @@ PODS:
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.10)
   - SVProgressHUD (2.2.5)
+  - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - Firebase
@@ -90,6 +91,7 @@ DEPENDENCIES:
   - Firebase/Database
   - lottie-ios
   - SVProgressHUD
+  - SwipeCellKit
 
 SPEC REPOS:
   trunk:
@@ -109,6 +111,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SVProgressHUD
+    - SwipeCellKit
 
 SPEC CHECKSUMS:
   Firebase: 8db6f2d1b2c5e2984efba4949a145875a8f65fe5
@@ -127,7 +130,8 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 49119c6e3694d2dde2721c3961f0b5e5bf43c21c
+PODFILE CHECKSUM: 1c9f810355bfc08b84a27368e0691f152ba6f429
 
 COCOAPODS: 1.9.3
