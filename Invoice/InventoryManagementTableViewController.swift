@@ -30,21 +30,10 @@ class InventoryManagementTableViewController: UITableViewController, UISearchBar
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellHash)
     }
     
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
         return 2
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        rowSelected = indexPath.row
-        tableView.deselectRow(at: indexPath, animated: true)
-        if rowSelected == 0 {
-            performSegue(withIdentifier: "goToParts", sender: self)
-        }
-//        else if rowSelected == 1 {
-//            performSegue(withIdentifier: "goToAccount", sender: self)
-//        }
-        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
@@ -56,5 +45,16 @@ class InventoryManagementTableViewController: UITableViewController, UISearchBar
         cell.textLabel?.text = menuItem
         
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        rowSelected = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
+        if rowSelected == 0 {
+            performSegue(withIdentifier: "goToParts", sender: self)
+        } else if rowSelected == 1 {
+            performSegue(withIdentifier: "goToClass", sender: self)
+        }
+        
     }
 }

@@ -35,6 +35,17 @@ class PartMaintenanceTableViewController: UITableViewController, UISearchBarDele
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellHash)
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+        
+        -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
+        
+        let menuItem = selectedMenuItem[indexPath.row]
+        cell.textLabel?.text = menuItem
+        
+        return cell
+    }
+    
     @IBAction func addNewPart(_ sender: Any) {
         
         var textField = UITextField()
@@ -107,17 +118,6 @@ class PartMaintenanceTableViewController: UITableViewController, UISearchBarDele
         destinationTableViewController.partNumber = selectedMenuItem[rowSelected!]
         destinationTableViewController.rowSelected = rowSelected
 
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
-        
-        -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
-        
-        let menuItem = selectedMenuItem[indexPath.row]
-        cell.textLabel?.text = menuItem
-        
-        return cell
     }
 
 }
