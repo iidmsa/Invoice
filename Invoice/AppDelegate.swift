@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,10 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = navigationController
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         
-        let invoiceDBSystem = Database.database().reference()
-        invoiceDBSystem.setValue("Connected.")
+//        let invoiceDBSystem = Database.database().reference()
+//        invoiceDBSystem.setValue("Connected.")
         return true
     }
 

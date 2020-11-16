@@ -7,12 +7,12 @@ target 'Invoice' do
 
     # Pods for Invoice
     pod 'lottie-ios'
-
-    pod 'Firebase'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Database'
-    pod 'SVProgressHUD'
-    pod 'Firebase/Analytics'
+    pod 'Alamofire', '~> 5.2'
+#    pod 'Firebase'
+#    pod 'Firebase/Auth'
+#    pod 'Firebase/Database'
+#    pod 'SVProgressHUD'
+#    pod 'Firebase/Analytics'
 
     pod 'SwipeCellKit'
 

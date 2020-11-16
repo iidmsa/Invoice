@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 
 class SignInViewController: UIViewController {
 
@@ -23,15 +23,15 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func logInButtonPressed(_ sender: Any) {
-        Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
-                          
-                  if error != nil {
+//        Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+//                          
+//                  if error != nil {
 //                     print(error)
-                  } else {
-                      print("Logged In successfully.")
-                      self.performSegue(withIdentifier: "goToMainMenu", sender: self)
-                  }
-              }
+//                  } else {
+//                      print("Logged In successfully.")
+//                      self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+//                  }
+//              }
     }
     
 }
