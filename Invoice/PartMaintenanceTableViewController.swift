@@ -65,19 +65,29 @@ class PartMaintenanceTableViewController: UITableViewController, UISearchBarDele
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+        let checkAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
             
-           // print("delete")
             self.selectedMenuItem.remove(at: indexPath.row)
             self.selectedMenuItemCopy = self.selectedMenuItem
-            self.tableView.reloadData()
+            
+            let alert = UIAlertController(title: "Are you sure ?", message: "This will permanently delete this entry.", preferredStyle: .alert)
+
+            let action = UIAlertAction(title: "Delete", style: .default) { (action) in
+                self.tableView.reloadData()
+            }
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            
             completionHandler(true)
         }
         
-        deleteAction.image = UIImage(named: "delete-icon")
-        deleteAction.backgroundColor = .red
+        var swipeAction: UISwipeActionsConfiguration?
         
-        let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+        checkAction.image = UIImage(named: "delete-icon")
+        checkAction.backgroundColor = .red
+        
+        swipeAction = UISwipeActionsConfiguration(actions: [checkAction])
+        
         return swipeAction;
     }
     

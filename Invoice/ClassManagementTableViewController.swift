@@ -46,22 +46,22 @@ class ClassManagementTableViewController:  UITableViewController, UISearchBarDel
        return cell
    }
     
-   override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-       let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
-           
-          // print("delete")
-           self.selectedMenuItem.remove(at: indexPath.row)
-           self.selectedMenuItemCopy = self.selectedMenuItem
-           self.tableView.reloadData()
-           completionHandler(true)
-       }
-       
-       deleteAction.image = UIImage(named: "delete-icon")
-       deleteAction.backgroundColor = .red
-       
-       let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
-       return swipeAction;
-   }
+//   override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//       let deleteAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+//           
+//          // print("delete")
+//           self.selectedMenuItem.remove(at: indexPath.row)
+//           self.selectedMenuItemCopy = self.selectedMenuItem
+//           self.tableView.reloadData()
+//           completionHandler(true)
+//       }
+//       
+//       deleteAction.image = UIImage(named: "delete-icon")
+//       deleteAction.backgroundColor = .red
+//       
+//       let swipeAction = UISwipeActionsConfiguration(actions: [deleteAction])
+//       return swipeAction;
+//   }
    
     @IBAction func addNewClass(_ sender: Any) {
         var textField = UITextField()
