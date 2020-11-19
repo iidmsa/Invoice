@@ -120,7 +120,6 @@
                                 </state>
                                 <connections>
                                     <action selector="SignUpButtonPressed:" destination="KKN-Dh-rJ6" eventType="touchUpInside" id="qbF-Y9-lsF"/>
-                                    <segue destination="NyR-MW-i8E" kind="push" id="x1H-5w-yni"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SYb-Xx-USU">
@@ -159,6 +158,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="M1R-HS-xgc" id="Ph1-EG-Juz"/>
                         <outlet property="passwordTextField" destination="SYb-Xx-USU" id="0wr-Iu-JEi"/>
+                        <segue destination="NyR-MW-i8E" kind="push" identifier="goToMainSignUp" id="XF9-fd-yce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZRT-q1-3zl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -203,6 +203,7 @@
                     <navigationItem key="navigationItem" id="CNd-Ck-wVD"/>
                     <connections>
                         <segue destination="44g-7Z-nes" kind="push" identifier="goToInv" id="xT4-Rc-Dun"/>
+                        <segue destination="U4z-8f-98p" kind="push" identifier="goToCust" id="juf-lY-uos"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNi-ms-LfC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,6 +259,49 @@
                 <exit id="paD-Sl-9Bc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2681" y="60"/>
+        </scene>
+        <!--Customer Management Table View Controller-->
+        <scene sceneID="rnB-pe-1op">
+            <objects>
+                <tableViewController id="U4z-8f-98p" customClass="CustomerManagementTableViewController" customModule="Invoice" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7D7-Fx-WLd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="7cH-Yd-BIP">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="U4z-8f-98p" id="nVg-1H-EV8"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="fsP-Yx-O93">
+                                <rect key="frame" x="0.0" y="72" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fsP-Yx-O93" id="iYG-Ci-cRv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U4z-8f-98p" id="o6W-xU-9oe"/>
+                            <outlet property="delegate" destination="U4z-8f-98p" id="mqB-kb-V68"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="pOg-Pw-unS">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="organize" id="dyV-d5-7H8">
+                            <connections>
+                                <action selector="refreshButtonAction:" destination="U4z-8f-98p" id="kEv-3J-eFn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHo-Sk-IM7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1817" y="839"/>
         </scene>
         <!--Inventory Management Table View Controller-->
         <scene sceneID="9Vg-FD-DaQ">
@@ -868,7 +912,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logInButtonPressed:" destination="NP1-I7-6XH" eventType="touchUpInside" id="NOe-BW-oE6"/>
-                                    <segue destination="NyR-MW-i8E" kind="push" id="agQ-iA-S4F"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haR-68-6l3">
@@ -907,6 +950,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="ScI-s3-Qs5" id="6vs-Hf-bKW"/>
                         <outlet property="passwordTextField" destination="haR-68-6l3" id="GVa-0J-lFA"/>
+                        <segue destination="NyR-MW-i8E" kind="push" identifier="goToMainLogin" id="ZPW-uQ-BQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vn6-F6-g4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -915,7 +959,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="agQ-iA-S4F"/>
+        <segue reference="XF9-fd-yce"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="74735347-belegvektorikone-in-einer-flachen-art-rechnungsikone-gesamtrechnungsikone-mit-dollarsymbol-auf-blaue.jpg" width="108" height="108"/>

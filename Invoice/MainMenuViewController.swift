@@ -54,6 +54,8 @@ class MainMenuViewController: UITableViewController, UISearchBarDelegate  {
             performSegue(withIdentifier: "goToAccounts", sender: self)
         } else if rowSelected == 1 {
             performSegue(withIdentifier: "goToInv", sender: self)
+        } else if rowSelected == 2 {
+            performSegue(withIdentifier: "goToCust", sender: self)
         }
         
     }
@@ -71,6 +73,12 @@ class MainMenuViewController: UITableViewController, UISearchBarDelegate  {
             
             destinationTableViewController.selectedMenuItem[0] = "Part Maintenance"
             destinationTableViewController.selectedMenuItem[1] = "Class Management"
+//        } else if rowSelected == 2 {
+//            let destinationTableViewController = segue.destination
+//                        as! InventoryManagementTableViewController
+//
+//            destinationTableViewController.selectedMenuItem[0] = "Part Maintenance"
+//            destinationTableViewController.selectedMenuItem[1] = "Class Management"
         }
     }
     

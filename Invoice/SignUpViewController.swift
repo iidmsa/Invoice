@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Alamofire
 
 class SignUpViewController: UIViewController {
 
@@ -25,18 +25,25 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func SignUpButtonPressed(_ sender: Any) {
-//        Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
-//
-//                if error != nil {
-//                    print(error!)
-//                } else {
-//                    print("Sign Up successfully.")
-//                    self.performSegue(withIdentifier: "goToMenu", sender: self)
-//                }
-//        }
+         
+        let signUpCred = [
+            "username": self.emailTextField.text! as String,
+            "password": self.passwordTextField.text! as String
+        ]
         
+        AF.request("http://192.168.0.4:3000/register",
+                   method: .get,
+                   parameters: signUpCred
+            ).validate().response { response in
+                    switch response.result {
+                        case .success( _):
+                            print("OK")
+                            self.performSegue(withIdentifier: "goToMainSignUp", sender: self)
+                            break
+                        case .failure(_):
+                            print("Error")
+                            break
+                    }
+             }
     }
-    
-    
-    
 }

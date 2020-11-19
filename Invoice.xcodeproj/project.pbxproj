@@ -20,6 +20,7 @@
 		17593C642534AD74008EAD01 /* AccountsReceivableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17593C632534AD74008EAD01 /* AccountsReceivableTableViewController.swift */; };
 		176B9AA025351C84005A5F93 /* BillsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B9A9F25351C84005A5F93 /* BillsTableViewController.swift */; };
 		176B9AA2253521EA005A5F93 /* DebtyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B9AA1253521EA005A5F93 /* DebtyViewController.swift */; };
+		1782C12425626DD900FD7DB7 /* CustomerManagementTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1782C12325626DD900FD7DB7 /* CustomerManagementTableViewController.swift */; };
 		1794CD2625230860004D35DB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1794CD2525230860004D35DB /* SignUpViewController.swift */; };
 		1794CD2825230FA4004D35DB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1794CD2725230FA4004D35DB /* SignInViewController.swift */; };
 		17D6C4082521B03D009E49F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D6C4072521B03D009E49F1 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		17593C632534AD74008EAD01 /* AccountsReceivableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReceivableTableViewController.swift; sourceTree = "<group>"; };
 		176B9A9F25351C84005A5F93 /* BillsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsTableViewController.swift; sourceTree = "<group>"; };
 		176B9AA1253521EA005A5F93 /* DebtyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtyViewController.swift; sourceTree = "<group>"; };
+		1782C12325626DD900FD7DB7 /* CustomerManagementTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerManagementTableViewController.swift; sourceTree = "<group>"; };
 		1794CD2525230860004D35DB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1794CD2725230FA4004D35DB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		17D6C4042521B03D009E49F1 /* Invoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Invoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,23 +152,24 @@
 			children = (
 				17D6C4072521B03D009E49F1 /* AppDelegate.swift */,
 				1706F8462521C9AC00211C2D /* 74735347-belegvektorikone-in-einer-flachen-art-rechnungsikone-gesamtrechnungsikone-mit-dollarsymbol-auf-blaue.jpg */,
-				1794CD2525230860004D35DB /* SignUpViewController.swift */,
 				1706F8422521BE4200211C2D /* 9825-loading-screen-loader-spinning-circle.json */,
 				17D6C4092521B03D009E49F1 /* SceneDelegate.swift */,
 				17D6C40B2521B03D009E49F1 /* ViewController.swift */,
 				1706F8442521C52B00211C2D /* Main.storyboard */,
+				1782C12325626DD900FD7DB7 /* CustomerManagementTableViewController.swift */,
+				176B9A9F25351C84005A5F93 /* BillsTableViewController.swift */,
 				1712DBCC25527782002706B8 /* AutoInfoViewController.swift */,
 				1712DBC825511E1F002706B8 /* PartsInfoViewController.swift */,
 				176B9AA1253521EA005A5F93 /* DebtyViewController.swift */,
 				170C9BD425478FB100ED04D6 /* DebterViewController.swift */,
 				170C9BD025478AF200ED04D6 /* AccountReceivableTableViewController.swift */,
 				1743CB3A2525A01900B7EC5E /* MainMenuViewController.swift */,
-				176B9A9F25351C84005A5F93 /* BillsTableViewController.swift */,
 				1712DBCA2552743A002706B8 /* ClassManagementTableViewController.swift */,
 				17593C632534AD74008EAD01 /* AccountsReceivableTableViewController.swift */,
 				17F7E2E72551094E00C922A9 /* InventoryManagementTableViewController.swift */,
 				17F7E2E925510C6E00C922A9 /* PartMaintenanceTableViewController.swift */,
 				1794CD2725230FA4004D35DB /* SignInViewController.swift */,
+				1794CD2525230860004D35DB /* SignUpViewController.swift */,
 				17D6C4102521B042009E49F1 /* Assets.xcassets */,
 				17D6C4122521B042009E49F1 /* LaunchScreen.storyboard */,
 				17D6C4152521B042009E49F1 /* Info.plist */,
@@ -462,6 +465,7 @@
 				1712DBC925511E1F002706B8 /* PartsInfoViewController.swift in Sources */,
 				17D6C40C2521B03D009E49F1 /* ViewController.swift in Sources */,
 				1712DBCB2552743A002706B8 /* ClassManagementTableViewController.swift in Sources */,
+				1782C12425626DD900FD7DB7 /* CustomerManagementTableViewController.swift in Sources */,
 				17593C642534AD74008EAD01 /* AccountsReceivableTableViewController.swift in Sources */,
 				17D6C4082521B03D009E49F1 /* AppDelegate.swift in Sources */,
 				1794CD2625230860004D35DB /* SignUpViewController.swift in Sources */,

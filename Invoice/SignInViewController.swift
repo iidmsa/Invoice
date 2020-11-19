@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import Alamofire
 //import Firebase
 
 class SignInViewController: UIViewController {
+    
+    struct Login: Encodable {
+        let username: String
+        let password: String
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,21 +23,35 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
   
+    override func didReceiveMemoryWarning() {
+        
+        super.didReceiveMemoryWarning()
+    }
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBAction func logInButtonPressed(_ sender: Any) {
-//        Auth.auth().signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
-//                          
-//                  if error != nil {
-//                     print(error)
-//                  } else {
-//                      print("Logged In successfully.")
-//                      self.performSegue(withIdentifier: "goToMainMenu", sender: self)
-//                  }
-//              }
+        
+        let loginCred = [
+            "username": self.emailTextField.text! as String,
+            "password": self.passwordTextField.text! as String
+        ]
+        
+        AF.request("http://192.168.0.4:3000/login",
+                   method: .get,
+                   parameters: loginCred
+            ).validate().response { response in
+                    switch response.result {
+                        case .success( _):
+                            print("OK")
+                            self.performSegue(withIdentifier: "goToMainLogin", sender: self)
+                            break
+                        case .failure(_):
+                            print("Error")
+                            break
+                    }
+             }
     }
-    
 }
