@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PartMaintenanceTableViewController: UITableViewController, UISearchBarDelegate {
 
@@ -38,6 +39,20 @@ class PartMaintenanceTableViewController: UITableViewController, UISearchBarDele
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         
         -> UITableViewCell {
+            
+            AF.request("http://192.168.0.4:3000//inventoryMangement/ partsManagement /add",
+                       method: .post
+            ).validate().response { response in
+                    switch response.result {
+                        case .success( _):
+                            print("OK")
+                            break
+                        case .failure(_):
+                            print("Error")
+                            break
+                    }
+             }
+            
         let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
         
         let menuItem = selectedMenuItem[indexPath.row]

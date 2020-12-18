@@ -24,7 +24,6 @@ class SignInViewController: UIViewController {
     }
   
     override func didReceiveMemoryWarning() {
-        
         super.didReceiveMemoryWarning()
     }
     
@@ -35,12 +34,12 @@ class SignInViewController: UIViewController {
     @IBAction func logInButtonPressed(_ sender: Any) {
         
         let loginCred = [
-            "username": self.emailTextField.text! as String,
+            "email": self.emailTextField.text! as String,
             "password": self.passwordTextField.text! as String
         ]
         
         AF.request("http://192.168.0.4:3000/login",
-                   method: .get,
+                   method: .put,
                    parameters: loginCred
             ).validate().response { response in
                     switch response.result {

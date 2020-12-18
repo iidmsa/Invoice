@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class BillsTableViewController: UITableViewController, UISearchBarDelegate {
     
@@ -28,7 +29,7 @@ class BillsTableViewController: UITableViewController, UISearchBarDelegate {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        navigationItem.title = "Bills"
+        navigationItem.title = "Redstone"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellHash)
@@ -57,6 +58,20 @@ class BillsTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
         
         -> UITableViewCell {
+//
+//            AF.request("http://192.168.4:3000/inventoryManagement/partsManagement/detailed",
+//                       method: .post
+//            ).validate().response { response in
+//                    switch response.result {
+//                        case .success( _):
+//                            print("OK")
+//                            break
+//                        case .failure(_):
+//                            print("Error")
+//                            break
+//                    }
+//             }
+            
         let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
             
         let menuItem = selectedMenuItem[indexPath.row]

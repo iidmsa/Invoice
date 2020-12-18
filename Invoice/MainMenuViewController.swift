@@ -65,8 +65,8 @@ class MainMenuViewController: UITableViewController, UISearchBarDelegate  {
             let destinationTableViewController = segue.destination
                         as! AccountsReceivableTableViewController
             
-            destinationTableViewController.selectedMenuItem[0] = "Bills"
-            destinationTableViewController.selectedMenuItem[1] = "Account Receivable"
+//            destinationTableViewController.selectedMenuItem[0] = "Bills"
+//            destinationTableViewController.selectedMenuItem[1] = "Account Receivable"
         } else if rowSelected == 1 {
             let destinationTableViewController = segue.destination
                         as! InventoryManagementTableViewController

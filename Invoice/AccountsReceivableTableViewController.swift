@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class AccountsReceivableTableViewController: UITableViewController, UISearchBarDelegate {
     
     var rowSelected: Int?
     let cellHash = "1729"
-    var selectedMenuItem = ["", ""]
-    var selectedMenuItemCopy = ["", ""]
+    var selectedMenuItem = ["", "", ""]
+    var selectedMenuItemCopy = ["", "", ""]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +30,13 @@ class AccountsReceivableTableViewController: UITableViewController, UISearchBarD
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellHash)
-        selectedMenuItemCopy = selectedMenuItem
+//        selectedMenuItemCopy = selectedMenuItem
+        httpsNetworkCallAccountsRecievable()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -47,15 +50,38 @@ class AccountsReceivableTableViewController: UITableViewController, UISearchBarD
         
     }
     
+    func httpsNetworkCallAccountsRecievable() {
+        AF.request("http://192.168.0.4:3000/accountsRecievable",
+                   method: .get
+        ).validate().responseJSON { response in
+                switch response.result {
+                    case .success( _):
+                        print("OK")
+                        print(response)
+                        let accountsRecievableJSON: JSON = JSON(response.value!)
+                        
+                        self.selectedMenuItem[0].append(accountsRecievableJSON[0]["CompanyName"].string!)
+                        self.selectedMenuItem[1].append(accountsRecievableJSON[1]["CompanyName"].string!)
+                        self.selectedMenuItem[2].append(accountsRecievableJSON[2]["CompanyName"].string!)
+                        self.tableView.reloadData()
+//                        print("DEBUG: net")
+                        print(self.selectedMenuItem)
+                        break
+                    case .failure(_):
+                        print("Error: accountsRecievable ")
+                        break
+                }
+         }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
-        
         -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellHash, for: indexPath)
+//            print("DEBUG: fill")
+            let menuItem = selectedMenuItem[indexPath.row]
+            cell.textLabel?.text = menuItem
         
-        let menuItem = selectedMenuItem[indexPath.row]
-        cell.textLabel?.text = menuItem
-        
-        return cell
+            return cell
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

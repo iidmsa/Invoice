@@ -27,12 +27,12 @@ class SignUpViewController: UIViewController {
     @IBAction func SignUpButtonPressed(_ sender: Any) {
          
         let signUpCred = [
-            "username": self.emailTextField.text! as String,
+            "email": self.emailTextField.text! as String,
             "password": self.passwordTextField.text! as String
         ]
         
         AF.request("http://192.168.0.4:3000/register",
-                   method: .get,
+                   method: .post,
                    parameters: signUpCred
             ).validate().response { response in
                     switch response.result {
